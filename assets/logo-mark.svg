@@ -1,0 +1,14 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Logos Learning Labs mark, official v3</title>
+  <defs>
+    <linearGradient id="lll-mark-gradient" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A90D9" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#F5A623" stop-opacity="0.88"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="16" fill="url(#lll-mark-gradient)"/>
+  <g transform="translate(7.428571 7.428571) scale(0.690476)" fill="#FFFFFF">
+    <path d="M10 7h7v29h22v6H10V7Z"/>
+    <path d="M24 7h7v16h8v6H24V7Z" opacity=".78"/>
+  </g>
+</svg>
