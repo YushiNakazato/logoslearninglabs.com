@@ -6,6 +6,7 @@
       <stop offset="1" stop-color="#F5A623" stop-opacity="0.88"/>
     </linearGradient>
   </defs>
+  <rect width="48" height="48" rx="16" fill="#4A90D9"/>
   <rect width="48" height="48" rx="16" fill="url(#lll-mark-gradient)"/>
   <g transform="translate(7.428571 7.428571) scale(0.690476)" fill="#FFFFFF">
     <path d="M10 8h8v26h14v6H10V8Z"/>
