@@ -1,0 +1,33 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A little learning. A wider world. Logos Learning Labs is a Canadian software studio making everyday learning a habit, starting with Flag Quiz.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0b1118">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:title" content="Logos Learning Labs — A little learning. A wider world.">
+  <meta property="og:description" content="Thoughtfully made learning apps from Richmond, British Columbia.">
+  <title>Logos Learning Labs — A little learning. A wider world.</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/vendor/mint-ui/0.6.1/theme.css">
+  <link rel="stylesheet" href="/vendor/mint-ui/0.6.1/components.css">
+  <link rel="stylesheet" href="/styles/site.css">
+  <script is:inline type="module" src="/scripts/site.js"></script>
+</head>
+<body class="mint-app">
+  <a href="#main" class="skip-link mint-button">Skip to content</a>
+  <SiteHeader />
+  <main id="main"><slot /></main>
+  <SiteFooter />
+</body>
+</html>
