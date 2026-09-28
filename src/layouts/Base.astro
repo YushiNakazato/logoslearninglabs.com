@@ -1,6 +1,10 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { resolve } from 'node:path';
+const iconVersion = createHash('sha256').update(await readFile(resolve('public/assets/favicon.svg'))).digest('hex').slice(0, 12);
 const production = !import.meta.env.DEV && process.env.SITE_PUBLIC === '1';
 ---
 <!doctype html>
@@ -18,7 +22,10 @@ const production = !import.meta.env.DEV && process.env.SITE_PUBLIC === '1';
   <meta property="og:description" content="Thoughtfully made learning apps from Richmond, British Columbia.">
   {production && <meta property="og:url" content="https://logoslearninglabs.com/">}
   <title>Logos Learning Labs — A little learning. A wider world.</title>
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href={`/favicon.ico?v=${iconVersion}`} sizes="16x16 32x32 48x48 256x256" type="image/x-icon">
+  <link rel="icon" href={`/favicon-32x32.png?v=${iconVersion}`} sizes="32x32" type="image/png">
+  <link rel="icon" href={`/assets/favicon.svg?v=${iconVersion}`} sizes="any" type="image/svg+xml">
+  <link rel="apple-touch-icon" href={`/apple-touch-icon.png?v=${iconVersion}`} sizes="180x180">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
