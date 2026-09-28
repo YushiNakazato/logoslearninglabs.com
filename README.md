@@ -49,4 +49,6 @@ These commands generate and validate the ignored `dist-production/` directory, i
 
 Stage the verified output in a separate clean checkout of the existing `main` branch, review the complete deployment diff, commit, and push normally. Do not merge the source branch into `main`, force-push, change DNS, or recreate Pages. Check the GitHub Pages build result and live HTTPS page/assets after pushing. The ignored `.local/pages-deploy/` directory can be used for this publishing checkout; do not copy that directory into build output.
 
+The initial redesign publication is recorded in [the 2026-09-28 release record](docs/releases/2026-09-28.md).
+
 Mint UI is pinned to 0.6.1. Do not edit distributed files under `public/vendor/`; site-specific appearance belongs in `public/styles/site.css`. Shared library changes belong in `C:/Users/yushi/Desktop/physical-ai-ma-praxis/packages/mint-ui/` under that project's instructions.
