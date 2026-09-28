@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Local English-language redesign draft for Logos Learning Labs Inc.",
+  "description": "English-language website for Logos Learning Labs Inc.",
   "packageManager": "pnpm@11.19.0",
   "engines": {
     "node": ">=22.12.0"
@@ -13,8 +13,10 @@
   },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1 --port 4333",
-    "build": "astro build",
+    "build": "node scripts/build-site.mjs",
+    "build:production": "node scripts/build-site.mjs --production",
     "preview": "astro preview --host 127.0.0.1 --port 4333",
-    "check": "node --check public/scripts/site.js && node scripts/verify-site.mjs"
+    "check": "node --check public/scripts/site.js && node scripts/verify-site.mjs",
+    "check:production": "node --check public/scripts/site.js && node scripts/verify-site.mjs --production"
   }
 }

@@ -1,9 +1,9 @@
-# Logos Learning Labs — local redesign draft
+# Logos Learning Labs
 
-English-language website draft for Logos Learning Labs Inc., a Canadian company. Built with Astro and Mint UI, following the Logos company website's structure.
+English-language website for Logos Learning Labs Inc., a Canadian company. Built with Astro and Mint UI, following the Logos company website's structure.
 The source repository is [YushiNakazato/logoslearninglabs.com](https://github.com/YushiNakazato/logoslearninglabs.com).
 
-This redesign is being developed on `codex/learning-labs-redesign` for local review. The live website has not been updated by this work. Do not merge this branch into `main`, push to a publishing branch, or deploy without a separate explicit user request to publish.
+Source work lives on `codex/learning-labs-redesign`. GitHub Pages publishes generated files from `main` at the repository root to [logoslearninglabs.com](https://logoslearninglabs.com/), with HTTPS enforced. The user authorized publishing the current redesign on 2026-09-28. Later deployments still require an explicit request to publish.
 
 ## Local preview
 
@@ -32,10 +32,21 @@ pnpm preview
 - `vendor/mint-ui/0.6.1/components.css`
 - `vendor/mint-ui/0.6.1/mint-ui.js`
 
-The root-level `CNAME`, Git metadata, tooling, and repository documentation are outside Astro's public source directory and are excluded from the build. Building does not publish or change the live site's domain configuration. Keep the draft's `noindex` metadata and `public/robots.txt` crawler exclusion during local review.
+The root-level `CNAME`, Git metadata, tooling, and repository documentation are outside Astro's public source directory and excluded from local builds. Building does not publish or change the live site's domain configuration. Local builds always retain `noindex` and `public/robots.txt` crawler exclusions, even if the parent shell has `SITE_PUBLIC=1`.
 
 ## Source and publishing
 
-Normal source commits may be pushed to the corresponding nonpublishing feature branch after reviewing the diff and running appropriate checks. A source push is distinct from permission to publish. The existing tracked `CNAME` and `.nojekyll` files describe the live site's setup and should remain untouched during this local redesign.
+Normal source commits may be pushed to the corresponding nonpublishing feature branch after reviewing the diff and running appropriate checks. A source push is distinct from permission to publish.
+
+For an explicitly approved deployment:
+
+```sh
+pnpm build:production
+pnpm check:production
+```
+
+These commands generate and validate the ignored `dist-production/` directory, including indexable metadata, a canonical URL, `robots.txt`, `sitemap.xml`, and exact copies of the existing `CNAME` and `.nojekyll`. Only Mint UI runtime files are included. Source, build tools, repository documentation and private local files remain excluded.
+
+Stage the verified output in a separate clean checkout of the existing `main` branch, review the complete deployment diff, commit, and push normally. Do not merge the source branch into `main`, force-push, change DNS, or recreate Pages. Check the GitHub Pages build result and live HTTPS page/assets after pushing. The ignored `.local/pages-deploy/` directory can be used for this publishing checkout; do not copy that directory into build output.
 
 Mint UI is pinned to 0.6.1. Do not edit distributed files under `public/vendor/`; site-specific appearance belongs in `public/styles/site.css`. Shared library changes belong in `C:/Users/yushi/Desktop/physical-ai-ma-praxis/packages/mint-ui/` under that project's instructions.

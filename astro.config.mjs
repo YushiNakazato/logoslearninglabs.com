@@ -1,10 +1,11 @@
 import { defineConfig } from 'astro/config';
-import { readdir, rm } from 'node:fs/promises';
+import { copyFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { relative, isAbsolute } from 'node:path';
 
 // Keep the installed package immutable; build output only needs its runtime.
 const mintRuntime = new Set(['theme.css', 'components.css', 'mint-ui.js']);
+const production = process.env.SITE_PUBLIC === '1';
 const publishMintRuntimeOnly = {
   name: 'publish-mint-runtime-only',
   hooks: {
@@ -23,6 +24,12 @@ const publishMintRuntimeOnly = {
           await rm(target, { recursive: true, force: true });
         }
       }
+      if (production) {
+        await copyFile(new URL('./CNAME', import.meta.url), new URL('CNAME', dir));
+        await copyFile(new URL('./.nojekyll', import.meta.url), new URL('.nojekyll', dir));
+        await writeFile(new URL('robots.txt', dir), 'User-agent: *\nAllow: /\nSitemap: https://logoslearninglabs.com/sitemap.xml\n');
+        await writeFile(new URL('sitemap.xml', dir), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://logoslearninglabs.com/</loc></url></urlset>\n');
+      }
     },
   },
 };
@@ -31,7 +38,7 @@ export default defineConfig({
   output: 'static',
   site: 'https://logoslearninglabs.com/',
   trailingSlash: 'always',
-  outDir: './dist',
+  outDir: production ? './dist-production' : './dist',
   devToolbar: { enabled: false },
   integrations: [publishMintRuntimeOnly],
 });

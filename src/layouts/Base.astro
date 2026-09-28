@@ -1,6 +1,7 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+const production = !import.meta.env.DEV && process.env.SITE_PUBLIC === '1';
 ---
 <!doctype html>
 <html lang="en-CA">
@@ -8,12 +9,14 @@ import SiteFooter from '../components/SiteFooter.astro';
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A little learning. A wider world. Logos Learning Labs is a Canadian software studio making everyday learning a habit, starting with Flag Quiz.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content={production ? 'index, follow' : 'noindex, nofollow'}>
+  {production && <link rel="canonical" href="https://logoslearninglabs.com/">}
   <meta name="theme-color" content="#0b1118">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_CA">
   <meta property="og:title" content="Logos Learning Labs — A little learning. A wider world.">
   <meta property="og:description" content="Thoughtfully made learning apps from Richmond, British Columbia.">
+  {production && <meta property="og:url" content="https://logoslearninglabs.com/">}
   <title>Logos Learning Labs — A little learning. A wider world.</title>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
