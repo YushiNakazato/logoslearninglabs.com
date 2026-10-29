@@ -1,0 +1,147 @@
+{
+  "domain": "logoslearninglabs.com",
+  "provider": "Onamae.com Navi",
+  "registeredRecordsReadAt": "2026-10-29T08:31:11.001Z",
+  "nameserverChange": false,
+  "beforeRecordCount": 12,
+  "afterRecordCount": 14,
+  "existingRecordsUnchanged": true,
+  "addedRecords": [
+    {
+      "name": "logoslearninglabs.com",
+      "type": "TXT",
+      "ttl": 60,
+      "value": "v=spf1 include:_spf.google.com ~all"
+    },
+    {
+      "name": "_dmarc.logoslearninglabs.com",
+      "type": "TXT",
+      "ttl": 3600,
+      "value": "v=DMARC1; p=quarantine"
+    }
+  ],
+  "preservedRecords": [
+    {
+      "name": "logoslearninglabs.com",
+      "type": "NS",
+      "ttl": 86400,
+      "value": "01.dnsv.jp"
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "NS",
+      "ttl": 86400,
+      "value": "02.dnsv.jp"
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "NS",
+      "ttl": 86400,
+      "value": "03.dnsv.jp"
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "NS",
+      "ttl": 86400,
+      "value": "04.dnsv.jp"
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "A",
+      "ttl": 60,
+      "value": "185.199.108.153"
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "A",
+      "ttl": 60,
+      "value": "185.199.109.153"
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "A",
+      "ttl": 60,
+      "value": "185.199.110.153"
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "A",
+      "ttl": 60,
+      "value": "185.199.111.153"
+    },
+    {
+      "name": "www.logoslearninglabs.com",
+      "type": "CNAME",
+      "ttl": 60,
+      "value": "yushinakazato.github.io"
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "MX",
+      "ttl": 60,
+      "value": "smtp.google.com.",
+      "priority": 1
+    },
+    {
+      "name": "logoslearninglabs.com",
+      "type": "TXT",
+      "ttl": 60,
+      "value": "google-site-verification=vjtTCUXcsisp-pIhFlVeNFIS1r8M4iXmMjvp45knU3o"
+    },
+    {
+      "name": "google._domainkey.logoslearninglabs.com",
+      "type": "TXT",
+      "ttl": 60,
+      "value": "v=DKIM1;k=rsa;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA61CaZHYvvgr2Kl9Ahl/jvNOPXfIlvj/H2Kv6uvRjbnFcW5XAvh21RKIjzpAn9eNYoy+Qnimu0EMlxnCSNXx8d1hF3rRNPInQijSBP8h42k5CxmJsMmIcJOC91mSBl+sN1Wsp2tnM849rPDwMeNDc869Yi/NISmTPsgyEURk07xfItY87B5npaINJUN+FIXgTeLk0PZoakFCQniB3JPcR+NF3vVBB5raVpe98offzjpnpcgUV1BbqD8wPrHJ1IVxrYmEYwpEtxOMcz5zWMTAROuz2103HRFetNYbKVgiVZBhHOi82bZCJXRju0LVY9nhmODkTTiRPn9Dw5eOl1lV6jwIDAQAB"
+    }
+  ],
+  "verificationMethod": "nslookup -type=TXT <name> <server>; values transcribed from successful command output",
+  "dnsQueries": [
+    {
+      "checkedAt": "2026-10-29T17:35:43.5279042+09:00",
+      "server": "01.dnsv.jp",
+      "serverAddress": "2400:8500:3300::53",
+      "name": "logoslearninglabs.com",
+      "exitCode": 0,
+      "txt": [
+        "google-site-verification=vjtTCUXcsisp-pIhFlVeNFIS1r8M4iXmMjvp45knU3o",
+        "v=spf1 include:_spf.google.com ~all"
+      ],
+      "spfRecordCount": 1
+    },
+    {
+      "checkedAt": "2026-10-29T17:35:43.5683474+09:00",
+      "server": "01.dnsv.jp",
+      "serverAddress": "2400:8500:3300::53",
+      "name": "_dmarc.logoslearninglabs.com",
+      "exitCode": 0,
+      "txt": [
+        "v=DMARC1; p=quarantine"
+      ]
+    },
+    {
+      "checkedAt": "2026-10-29T17:35:43.7061465+09:00",
+      "server": "8.8.8.8",
+      "name": "logoslearninglabs.com",
+      "exitCode": 0,
+      "txt": [
+        "v=spf1 include:_spf.google.com ~all",
+        "google-site-verification=vjtTCUXcsisp-pIhFlVeNFIS1r8M4iXmMjvp45knU3o"
+      ],
+      "spfRecordCount": 1
+    },
+    {
+      "checkedAt": "2026-10-29T17:35:43.8887762+09:00",
+      "server": "8.8.8.8",
+      "name": "_dmarc.logoslearninglabs.com",
+      "exitCode": 0,
+      "txt": [
+        "v=DMARC1; p=quarantine"
+      ]
+    }
+  ],
+  "testEmailSent": false,
+  "authenticationResultsVerified": false,
+  "dkimSigningEnabledVerified": false,
+  "rollbackToNonePerformed": false
+}
